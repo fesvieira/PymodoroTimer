@@ -4,6 +4,10 @@ A pomodoro timer made in Python terminal
 
 ## Organize your study sessions in blocks of time
 
+
+https://github.com/fesvieira/PymodoroTimer/assets/65823376/d27d3f4d-e36f-4474-ae9c-3064850f3a50
+
+
 <p>
   <img width="405" alt="image" src="https://github.com/fesvieira/PymodoroTimer/assets/65823376/9c37ca13-d1e8-4260-8cc9-0a2ce4ab7605">
 
