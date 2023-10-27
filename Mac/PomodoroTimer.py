@@ -13,7 +13,7 @@ nomeArq = 'status-' + str(date.today())
 # Verifica se existe o arquivo que salva os ciclos
 if (not path.isfile(nomeArq + '.txt')):
     arq.criar(nomeArq)
-    arq.add(nomeArq, 'Pomodoro timer no dia: ' + str(date.today()) + '\nFechados: 0')
+    arq.add(nomeArq, 'Pomodoro of day: ' + str(date.today()) + '\nDone: 0')
     fechados = 0
 else: 
     arquivo = open(nomeArq + '.txt', 'r') 
@@ -25,10 +25,10 @@ else:
 
 titulo = tc.red + 'Pomodoro timer!!!'.center(37)
 
-avisos  = tc.yellow + '!! AVISOS !!'.center(37) + '\n'
-avisos += tc.green  + 'POSTURA'                 + '\n' 
-avisos += tc.cyan   + 'ÁGUA'                    + '\n' 
-avisos += tc.red    + 'M'                       + '\n' 
+avisos  = tc.yellow + '!! WARNINGS !!'.center(37) + '\n'
+avisos += tc.green  + 'Check notes!'                 + '\n' 
+avisos += tc.cyan   + 'Update schedule'                    + '\n' 
+avisos += tc.red    + 'Review studied content'                       + '\n' 
 avisos += tc.yellow + '!!! LEGENDS NEVER DIE !!!'.center(37)
 
 # Programa ativo
@@ -37,14 +37,14 @@ while(True):
     
     # Tela inicial
     print(titulo)
-    print((tc.cyan + 'Ciclos fechados: ' + str(fechados)).center(37))
-    tempo = input(tc.purple + "Quantos minutos?? ")
+    print((tc.cyan + 'Sessions done: ' + str(fechados)).center(37))
+    tempo = input(tc.purple + "How many minutes??? ")
     
     # Reconfigura os ciclos concluídos
     if tempo == 'set':
-        fechados = int(input('Quantos ciclos já foram ?? '))
+        fechados = int(input('How many sessions were done?? '))
         arq.lastLineE(nomeArq)
-        arq.add(nomeArq, 'Fechados: ' + str(fechados))
+        arq.add(nomeArq, 'Done: ' + str(fechados))
         continue # Pula um ciclo
     
     # Configura entrada
@@ -84,8 +84,8 @@ while(True):
         
         # Tela do timer
         print(titulo)
-        print((tc.cyan + 'Ciclos fechados: ' + str(fechados)).center(37))
-        print('Tempo restante: ')
+        print((tc.cyan + 'Sessions done: ' + str(fechados)).center(37))
+        print('Remaining time: ')
         print(cor + digGrande(int(digs[0]), int(digs[1]), int(digs[2]), int(digs[3])))
         print(avisos)
         
@@ -95,12 +95,12 @@ while(True):
     if tempo > 10:
         arq.lastLineE(nomeArq)
         fechados += 1
-        arq.add(nomeArq, 'Encerrado as: ' + ctime().split()[3] + '\nFechados: ' + str(fechados))
+        arq.add(nomeArq, 'Finished at: ' + ctime().split()[3] + '\nDone: ' + str(fechados))
     
     # Pega a hora atual
     system('clear')
     hrAtual = ctime().split()[3]
-    print('Encerrado as: ' + hrAtual)
+    print('Finished at: ' + hrAtual)
     
     # Abre uma alert box no final do ciclo
     system('open "https://www.youtube.com/shorts/6ZN69be827c"')
