@@ -5,10 +5,9 @@ from time import sleep, ctime
 from Pylipe import digGrande, textColor as tc, Arquivo as arq
 from datetime import date
 
-system('mode con: cols=37 lines=16')  # Abrir janela com tamanho fixo
 system('@CHCP 65001 >nul')            # Permitir texto colorido  
 
-nomeArq = 'status-' + str(date.today())
+nomeArq = 'status/status-' + str(date.today())
 
 # Verifica se existe o arquivo que salva os ciclos
 if (not path.isfile(nomeArq + '.txt')):
