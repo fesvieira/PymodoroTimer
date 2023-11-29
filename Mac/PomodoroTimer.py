@@ -8,6 +8,7 @@ from datetime import date
 system("printf '\e[8;16;37t'")
 system("mkdir status")
 system('@CHCP 65001 >nul')            # Permitir texto colorido  
+#
 
 nomeArq = 'status/status-' + str(date.today())
 
