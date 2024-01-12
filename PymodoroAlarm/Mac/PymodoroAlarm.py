@@ -61,12 +61,12 @@ while(True):
     
     currentAlarmTime = time
     # Configura entrada
-    time = float(time) - datetime.now().minute - 1
+    time = (float(time) - datetime.now().minute) * 60 - datetime.now().second
 
     if time < 0:
         segs = 1
     else:
-        segs = time * 60
+        segs = time
 
     # Contador regressivo
     while(segs > 0):
