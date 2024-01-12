@@ -36,11 +36,14 @@ avisos += tc.yellow + '!!! LEGENDS NEVER DIE !!!'.center(37)
 # Programa ativo
 while(True):
     system('clear')
+
+    timeNow = datetime.now()
+    currentAlarmTime = '50'
     
     # Tela inicial
     print(titulo)
     print((tc.cyan + 'Sessions done: ' + str(fechados)).center(37))
-    time = input(tc.purple + "At which minute should alarms play??? ")
+    time = input(tc.purple + "Alarm at " + str(timeNow.hour) + ":" + currentAlarmTime + "\nPress enter to start or insert new value\n")
     
     # Reconfigura os ciclos concluídos
     if time == 'set':
@@ -50,11 +53,16 @@ while(True):
         continue # Pula um ciclo
 
     if time == '':
-        time = '50'
+        time = currentAlarmTime
     
+    currentAlarmTime = time
     # Configura entrada
     time = float(time) - datetime.now().minute - 1
-    segs = time * 60
+    
+    if time < 0:
+        segs = 1
+    else:
+        segs = time * 60
 
     # Contador regressivo
     while(segs > 0):
