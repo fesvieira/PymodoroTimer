@@ -30,11 +30,11 @@ else:
 
 titulo = tc.red + 'Pomodoro timer!!!'.center(cols)
 
-avisos  = f"{tc.yellow}WARNINGS !!\n" 
-+ f"{tc.green}Check notes!\n" 
-+ f"{tc.cyan}Update schedule\n"  
-+ f"{tc.red}'Review studied content\n"  
-+ f"{tc.yellow}LEGENDS NEVER DIE !!!".center(cols)
+warnings  = f"{tc.yellow}WARNINGS !!\n" 
+warnings += f"{tc.green}Check notes!\n" 
+warnings += f"{tc.cyan}Update schedule\n"  
+warnings += f"{tc.red}'Review studied content\n"  
+warnings += f"{tc.yellow}LEGENDS NEVER DIE !!!".center(cols)
 
 # Programa ativo
 while(True):
@@ -103,8 +103,8 @@ while(True):
         print(titulo)
         print((tc.cyan + 'Sessions done: ' + str(fechados)).center(cols))
         print('Remaining time: ')
-        print(cor + digGrande(int(digs[0]), int(digs[1]), int(digs[2]), int(digs[3])))
-        print(avisos)
+        print(f"{cor}{digGrande(int(digs[0]), int(digs[1]), int(digs[2]), int(digs[3]))}".center(cols))
+        print(warnings)
         
         sleep(1)
     

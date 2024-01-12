@@ -27,11 +27,11 @@ else:
 
 titulo = tc.red + 'Pomodoro timer!!!'.center(37)
 
-avisos  = tc.yellow + '!! WARNINGS !!'.center(37) + '\n'
-avisos += tc.green  + 'Check notes!'                 + '\n' 
-avisos += tc.cyan   + 'Update schedule'                    + '\n' 
-avisos += tc.red    + 'Review studied content'                       + '\n' 
-avisos += tc.yellow + '!!! LEGENDS NEVER DIE !!!'.center(37)
+warnings  = tc.yellow + '!! WARNINGS !!'.center(37) + '\n'
+warnings += tc.green  + 'Check notes!'                 + '\n' 
+warnings += tc.cyan   + 'Update schedule'                    + '\n' 
+warnings += tc.red    + 'Review studied content'                       + '\n' 
+warnings += tc.yellow + '!!! LEGENDS NEVER DIE !!!'.center(37)
 
 # Programa ativo
 while(True):
@@ -89,7 +89,7 @@ while(True):
         print((tc.cyan + 'Sessions done: ' + str(fechados)).center(37))
         print('Remaining time: ')
         print(cor + digGrande(int(digs[0]), int(digs[1]), int(digs[2]), int(digs[3])))
-        print(avisos)
+        print(warnings)
         
         sleep(1)
     
