@@ -5,7 +5,10 @@ from time import sleep, ctime
 from Pylipe import digGrande, textColor as tc, Arquivo as arq
 from datetime import datetime, date
 
-system("printf '\e[8;16;37t'")
+lines = 16
+cols = 45
+
+system(f"printf '\e[8;{lines};{cols}t'")
 system("mkdir status")
 system('@CHCP 65001 >nul')            # Permitir texto colorido  
 
@@ -25,13 +28,13 @@ else:
     fechados = int(conteudo[l - 1][-1])
 
 
-titulo = tc.red + 'Pomodoro timer!!!'.center(37)
+titulo = tc.red + 'Pomodoro timer!!!'.center(cols)
 
-avisos  = tc.yellow + '!! WARNINGS !!'.center(37) + '\n'
-avisos += tc.green  + 'Check notes!'                 + '\n' 
-avisos += tc.cyan   + 'Update schedule'                    + '\n' 
-avisos += tc.red    + 'Review studied content'                       + '\n' 
-avisos += tc.yellow + '!!! LEGENDS NEVER DIE !!!'.center(37)
+avisos  = f"{tc.yellow}WARNINGS !!\n" 
++ f"{tc.green}Check notes!\n" 
++ f"{tc.cyan}Update schedule\n"  
++ f"{tc.red}'Review studied content\n"  
++ f"{tc.yellow}LEGENDS NEVER DIE !!!".center(cols)
 
 # Programa ativo
 while(True):
@@ -42,8 +45,9 @@ while(True):
     
     # Tela inicial
     print(titulo)
-    print((tc.cyan + 'Sessions done: ' + str(fechados)).center(37))
-    time = input(tc.purple + "Alarm at " + str(timeNow.hour) + ":" + currentAlarmTime + "\nPress enter to start or insert new value\n")
+    print((tc.cyan + 'Sessions done: ' + str(fechados)))
+    print(f"{tc.green}Alarm at {str(timeNow.hour)}:{currentAlarmTime}\n")
+    time = input(f"{tc.yellow}Press enter to start or insert new value: ")
     
     # Reconfigura os ciclos concluídos
     if time == 'set':
@@ -58,7 +62,7 @@ while(True):
     currentAlarmTime = time
     # Configura entrada
     time = float(time) - datetime.now().minute - 1
-    
+
     if time < 0:
         segs = 1
     else:
@@ -97,7 +101,7 @@ while(True):
         
         # Tela do timer
         print(titulo)
-        print((tc.cyan + 'Sessions done: ' + str(fechados)).center(37))
+        print((tc.cyan + 'Sessions done: ' + str(fechados)).center(cols))
         print('Remaining time: ')
         print(cor + digGrande(int(digs[0]), int(digs[1]), int(digs[2]), int(digs[3])))
         print(avisos)
