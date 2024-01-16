@@ -28,13 +28,13 @@ else:
     fechados = int(conteudo[l - 1][-1])
 
 
-titulo = tc.red + 'Pomodoro timer!!!'.center(cols)
+titulo = tc.red + 'Pomodoro timer!'.center(cols)
 
-warnings  = f"{tc.yellow}WARNINGS !!\n" 
-warnings += f"{tc.green}Check notes!\n" 
-warnings += f"{tc.cyan}Update schedule\n"  
-warnings += f"{tc.red}'Review studied content\n"  
-warnings += f"{tc.yellow}LEGENDS NEVER DIE !!!".center(cols)
+warnings  = tc.yellow + "WARNINGS".center(cols)  + "\n"             
+warnings += tc.green  + "Check notes!"           + "\n" 
+warnings += tc.cyan   + "Update schedule"        + "\n"     
+warnings += tc.red    + "Review studied content" + "\n"             
+warnings += tc.yellow + "LEGENDS NEVER DIE!".center(cols)
 
 # Programa ativo
 while(True):
@@ -103,7 +103,7 @@ while(True):
         print(titulo)
         print((tc.cyan + 'Sessions done: ' + str(fechados)).center(cols))
         print('Remaining time: ')
-        print(f"{cor}{digGrande(int(digs[0]), int(digs[1]), int(digs[2]), int(digs[3]))}".center(cols))
+        print(cor + digGrande(int(digs[0]), int(digs[1]), int(digs[2]), int(digs[3])))
         print(warnings)
         
         sleep(1)
